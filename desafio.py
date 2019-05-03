@@ -42,16 +42,15 @@ else:
 		print('')
 	
 		resposta = input('Escolha uma opção: ')
-		print('resposta = ' + resposta)
-		print ('campo 4 eh ' + campos[4])
 	
 		if resposta.strip() == campos[4].strip():
 			certas += 1
 			print ("Você acertou! \o/ ")
 		else:
 			erradas += 1
-			print ("Você se enganou")
+			print ("Você se enganou...")
 	
+		print('')
 		print('----------------------------------------------')
 		print('')
 	
