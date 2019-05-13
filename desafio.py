@@ -39,6 +39,7 @@ try:
 		
 		print('')
 		print('----------------------------------------------')
+		print('')
 		
 		for linha in open(nome_arq_perguntas) :
 			campos = linha.split('|')
@@ -66,6 +67,13 @@ try:
 		print ('Respostas corretas: ' + str(certas))
 		print ('Respostas incorretas: ' + str(erradas))
 		print('')
+
+		for linha_premiacao in open('premiacao'):
+			campos = linha_premiacao.split('|')
+
+			if int(campos[0]) > acum_certas and acum_certas + certas >= int(campos[0]):
+				print(campos[1])
+
 		
 		acum_certas += certas
 		acum_erradas += erradas
@@ -77,6 +85,7 @@ try:
 		
 		print ('Total de corretas: ' + str(acum_certas))
 		print ('Total de incorretas: ' + str(acum_erradas))
+
 	
 	
 except (OSError, IOError) as e:
